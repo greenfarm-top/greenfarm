@@ -2089,23 +2089,27 @@ function flipCard(i) {
 
 </style>	
 
-
 <script>
-  window.onload = function() {
-    var currentURL = window.location.href;
-    var keyword = "greenfarm-top.github.io/greenfarm/";
+ 
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollToTopBtn.classList.add("show");
+    } else {
+      scrollToTopBtn.classList.remove("show");
+    }
+  };
 
  
-    var inIframe = (window.self !== window.top);
-
-    if (currentURL.includes(keyword) && !inIframe) {
-    
-      setTimeout(function() {
-        window.location.replace("https://greenfarm.rf.gd/");
-      }, 1000); 
-    }
-  }
+  scrollToTopBtn.onclick = function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 </script>
+
+
 
 <script src="./index_files/bootstrap.bundle.min.js.download"></script>
 <script src="./index_files/common.js.download"></script>
