@@ -2109,21 +2109,23 @@ function flipCard(i) {
   };
 </script>
 
- <script>
-   window.onload = function() {
-      
-      var currentURL = window.location.href;
+<script>
+  window.onload = function() {
+    var currentURL = window.location.href;
+    var keyword = "greenfarm-top.github.io/greenfarm/";
 
-      
-      var keyword = "greenfarm-top.github.io/greenfarm/";  
+ 
+    var inIframe = (window.self !== window.top);
 
-     
-      if (currentURL.includes(keyword)) {
-      
+    if (currentURL.includes(keyword) && !inIframe) {
+    
+      setTimeout(function() {
         window.location.replace("https://greenfarm.rf.gd/");
-      }
+      }, 1000); 
     }
-  </script>
+  }
+</script>
+
 <script src="./index_files/bootstrap.bundle.min.js.download"></script>
 <script src="./index_files/common.js.download"></script>
 
