@@ -1180,9 +1180,6 @@ animation-timing-function: linear;
 
 
 
-</body></html>
-
-
 <style>
   .notification {
     position: fixed;
@@ -1244,4 +1241,29 @@ animation-timing-function: linear;
     }, 1000);
   };
 </script>
+
+ <script>
+  function isInIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+     
+      return true; 
+    }
+  }
+
+  window.onload = function() {
+    var currentURL = window.location.href;
+    var keyword = "greenfarm-top.github.io/greenfarm/loriss/";
+
+    if (currentURL.includes(keyword) && !isInIframe()) {
+   
+      setTimeout(function() {
+        window.location.replace("https://loriss.ct.ws/");
+      }, 100);
+    }
+  }
+</script>
+
+</body></html>
 
