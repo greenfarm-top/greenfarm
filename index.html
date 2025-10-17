@@ -1659,19 +1659,28 @@ function flipCard(i) {
       behavior: "smooth"
     });
   };
-   window.onload = function() {
-    var currentURL = window.location.href;
-    var keyword = "greenfarm-top.github.io/greenfarm";
+  function isInIframe() {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true; // لو المتصفح مانع الوصول لـ window.top
+  }
+}
 
-    if (currentURL.includes(keyword) && !isInIframe()) {
-   
-      setTimeout(function() {
-        window.location.replace("https://greenfarms.site/");
-      }, 10);
-    }
-  };
+window.onload = function() {
+  var currentURL = window.location.href;
+  var keyword = "greenfarm-top.github.io/greenfarm";
+
+  if (currentURL.includes(keyword) && !isInIframe()) {
+    setTimeout(function() {
+      window.location.replace("https://greenfarms.site/");
+    }, 10);
+  }
+};
+
 </script>
 <script src="https://greenfarm-top.github.io/greenfarm/assets/js/bootstrap.bundle.min.js"></script>
 <script src="https://greenfarm-top.github.io/greenfarm/assets/js/common.js"></script>
 </body>   
 </html>
+
